@@ -279,10 +279,24 @@ local function MultiBarsConfig_CreateSingleBarOptions(MultiBars, options, barNam
 					MultiBars:UpdateActions()
 				end,
 			},
+			maxButtons = {
+				type = 'range',
+				order = 3,
+				name = "Max Buttons",
+				desc = "Limits the number of buttons that will be on the bar",
+				min = 1,
+				max = 12,
+				step = 1,
+				get = function(info) return MultiBarsOptions.bars[barName].maxButtons end,
+				set = function(info, value)
+					MultiBarsOptions.bars[barName].maxButtons = value
+					MultiBars:UpdateActions()
+				end,
+			},
 		}
 	}
 	
-	local nextOrder = 3
+	local nextOrder = 4
 	
 	if barName == "MultiBarFood" then
 		options.args[barName].args.includeBuffFood = {

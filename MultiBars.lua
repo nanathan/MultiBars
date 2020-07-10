@@ -28,11 +28,13 @@ local MultiBarsOptionsDefaults = {
 		MultiBarAspect = {
 			color = { 2 / 3, 2 / 3, 0.7, 1 },
 			hidden = {},
+			maxButtons = 12,
 			reversed = false,
 		},
 		MultiBarBlessing = {
 			color = { 2 / 3, 2 / 3, 0.7, 1 },
 			hidden = {},
+			maxButtons = 12,
 			reversed = false,
 			useAlternates = true,
 			useModSwitch = true,
@@ -40,26 +42,31 @@ local MultiBarsOptionsDefaults = {
 		MultiBarBuff = {
 			color = { 2 / 3, 2 / 3, 0.7, 1 },
 			hidden = {},
+			maxButtons = 12,
 			reversed = false,
 		},
 		MultiBarConsumable = {
 			color = { 2 / 3, 2 / 3, 0.7, 1 },
 			hidden = {},
+			maxButtons = 12,
 			reversed = false,
 		},
 		MultiBarCurse = {
 			color = { 2 / 3, 2 / 3, 0.7, 1 },
 			hidden = {},
+			maxButtons = 12,
 			reversed = false,
 		},
 		MultiBarDemon = {
 			color = { 2 / 3, 2 / 3, 0.7, 1 },
 			hidden = {},
+			maxButtons = 12,
 			reversed = false,
 		},
 		MultiBarDruid = {
 			color = { 2 / 3, 2 / 3, 0.7, 1 },
 			hidden = {},
+			maxButtons = 12,
 			reversed = false,
 			useAlternates = true,
 			useModSwitch = true,
@@ -67,28 +74,33 @@ local MultiBarsOptionsDefaults = {
 		MultiBarFeedPet = {
 			color = { 2 / 3, 2 / 3, 0.7, 1 },
 			hidden = {},
+			maxButtons = 12,
 			reversed = false,
 			includeBuffFood = false,
 		},
 		MultiBarFood = {
 			color = { 2 / 3, 2 / 3, 0.7, 1 },
 			hidden = {},
+			maxButtons = 12,
 			reversed = false,
 			includeBuffFood = false,
 		},
 		MultiBarHunterPet = {
 			color = { 2 / 3, 2 / 3, 0.7, 1 },
 			hidden = {},
+			maxButtons = 12,
 			reversed = false,
 		},
 		MultiBarMacro = {
 			color = { 2 / 3, 2 / 3, 0.7, 1 },
 			hidden = {},
+			maxButtons = 12,
 			reversed = false,
 		},
 		MultiBarPriest = {
 			color = { 2 / 3, 2 / 3, 0.7, 1 },
 			hidden = {},
+			maxButtons = 12,
 			reversed = false,
 			useAlternates = true,
 			useModSwitch = true,
@@ -96,16 +108,19 @@ local MultiBarsOptionsDefaults = {
 		MultiBarProfession = {
 			color = { 2 / 3, 2 / 3, 0.7, 1 },
 			hidden = {},
+			maxButtons = 12,
 			reversed = false,
 		},
 		MultiBarSeal = {
 			color = { 2 / 3, 2 / 3, 0.7, 1 },
 			hidden = {},
+			maxButtons = 12,
 			reversed = false,
 		},
 		MultiBarTrap = {
 			color = { 2 / 3, 2 / 3, 0.7, 1 },
 			hidden = {},
+			maxButtons = 12,
 			reversed = false,
 		},
 	},
@@ -501,6 +516,7 @@ function MultiBars:UpdateActions()
 	
 	local name, bar
 	for name, bar in pairs(MultiBars.bars) do
+		bar.maxButtons = MultiBarsOptions.bars[name].maxButtons
 		MultiBarsCore_Bar_UpdateActions(bar)
 	end
 end

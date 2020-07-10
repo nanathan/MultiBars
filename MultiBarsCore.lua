@@ -2,6 +2,8 @@
 local _
 local MBC_DEBUG = false
 
+local MBC_MAX_BUTTONS = 12
+
 local function NotNull(value)
 	if value == nil then
 		return "nil"
@@ -67,7 +69,7 @@ function MultiBarsCore_Bar_OnLoad(self)
 	end
 	
 	self.actions = {}
-	self.maxButtons = 12
+	self.maxButtons = MBC_MAX_BUTTONS
 	self.buttons = {}
 	self.buttonActions = {}
 	self.cooldowns = {}
@@ -77,7 +79,7 @@ function MultiBarsCore_Bar_OnLoad(self)
 	self.names = {}
 	self.normals = {}
 	local n
-	for n = 1, self.maxButtons do
+	for n = 1, MBC_MAX_BUTTONS do
 		self.buttons[n] = _G[name .. "Button" .. n]
 		self.buttons[n].buttonNumber = n
 		self.cooldowns[n] = _G[name .. "Button" .. n .. "Cooldown"]
@@ -343,14 +345,16 @@ function MultiBarsCore_Bar_UpdateBindings(self)
 	ClearOverrideBindings(self)
 	
 	local n
-	for n = 1, self.maxButtons do
+	for n = 1, MBC_MAX_BUTTONS do
 		MultiBarsCore_Bar_UpdateBinding(self, n)
 	end
 end
 
 local function MultiBarsCore_Bar_SetActionOnButton(self, action, buttonNumber)
-	if self.maxButtons and buttonNumber > self.maxButtons then
+	if buttonNumber > MBC_MAX_BUTTONS then
 		return
+	elseif buttonNumber > self.maxButtons then
+		action = nil
 	end
 	self.buttonActions[buttonNumber] = action
 	
@@ -464,10 +468,14 @@ function MultiBarsCore_Bar_UpdateActions(self)
 			buttonNumber = buttonNumber + 1
 		end
 		
+		if buttonNumber > self.maxButtons then
+			break
+		end
+		
 		n = n + 1
 	end
 	-- hide the rest of the buttons
-	for buttonNumber = buttonNumber, self.maxButtons do
+	for buttonNumber = buttonNumber, MBC_MAX_BUTTONS do
 		MultiBarsCore_Bar_SetActionOnButton(self, nil, buttonNumber)
 	end
 	
@@ -491,14 +499,14 @@ function MultiBarsCore_Bar_SetOrientation(self, vertical)
 	if vertical then
 		self.buttons[1]:ClearAllPoints()
 		self.buttons[1]:SetPoint("TOP", 0, -5)
-		for n = 2, self.maxButtons do
+		for n = 2, MBC_MAX_BUTTONS do
 			self.buttons[n]:ClearAllPoints()
 			self.buttons[n]:SetPoint("TOP", self.buttons[n - 1], "BOTTOM", 0, -2)
 		end
 	else
 		self.buttons[1]:ClearAllPoints()
 		self.buttons[1]:SetPoint("LEFT", 5, 0)
-		for n = 2, self.maxButtons do
+		for n = 2, MBC_MAX_BUTTONS do
 			self.buttons[n]:ClearAllPoints()
 			self.buttons[n]:SetPoint("LEFT", self.buttons[n - 1], "RIGHT", 2, 0)
 		end
