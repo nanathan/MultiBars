@@ -796,11 +796,20 @@ function MultiBars:OnFirstStart()
 				groupOptions.nopet = false
 			end
 		end
-		if playerClass == "HUNTER" then
+		if playerClass == "DRUID" then
+			MultiBarsOptions.groups[1].alignment = "left"
+			MultiBarsOptions.groups[1].bars[1] = "MultiBarDruid"
+			MultiBarsOptions.groups[2].alignment = "right"
+			MultiBarsOptions.groups[2].bars[1] = "MultiBarConsumable"
+			MultiBarsOptions.groups[2].bars[2] = "MultiBarBuff"
+			MultiBarsOptions.groups[2].bars[3] = "MultiBarFood"
+		elseif playerClass == "HUNTER" then
 			MultiBarsOptions.adjustGroupsForPetBar = true
 			MultiBarsOptions.groups[1].alignment = "left"
 			MultiBarsOptions.groups[1].bars[1] = "MultiBarAspect"
 			MultiBarsOptions.groups[1].bars[2] = "MultiBarTrap"
+			MultiBarsOptions.groups[1].bars[3] = "MultiBarHunterPet"
+			MultiBarsOptions.groups[1].bars[4] = "MultiBarFeedPet"
 			MultiBarsOptions.groups[2].alignment = "right"
 			MultiBarsOptions.groups[2].bars[1] = "MultiBarConsumable"
 			MultiBarsOptions.groups[2].bars[2] = "MultiBarBuff"
@@ -809,7 +818,7 @@ function MultiBars:OnFirstStart()
 			MultiBarsOptions.groups[1].alignment = "left"
 			MultiBarsOptions.groups[1].bars[1] = "MultiBarSeal"
 			MultiBarsOptions.groups[1].bars[2] = "MultiBarBlessing"
-			MultiBarsOptions.groups[2].alignment = "right"
+			MultiBarsOptions.groups[2].alignment = "top"
 			MultiBarsOptions.groups[2].bars[1] = "MultiBarConsumable"
 			MultiBarsOptions.groups[2].bars[2] = "MultiBarBuff"
 			MultiBarsOptions.groups[2].bars[3] = "MultiBarFood"
@@ -830,10 +839,12 @@ function MultiBars:OnFirstStart()
 			MultiBarsOptions.groups[2].bars[2] = "MultiBarBuff"
 			MultiBarsOptions.groups[2].bars[3] = "MultiBarFood"
 		else
+			MultiBarsOptions.groups[1].alignment = "right"
 			MultiBarsOptions.groups[1].bars[1] = "MultiBarConsumable"
-			MultiBarsOptions.groups[2].bars[1] = "MultiBarBuff"
-			MultiBarsOptions.groups[2].bars[2] = "MultiBarFood"
+			MultiBarsOptions.groups[1].bars[1] = "MultiBarBuff"
+			MultiBarsOptions.groups[1].bars[2] = "MultiBarFood"
 		end
+		MultiBarsOptions.groups[3].alignment = "top"
 		MultiBarsOptions.groups[3].bars[1] = "MultiBarProfession"
 	end
 end
