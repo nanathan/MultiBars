@@ -22,6 +22,7 @@ local MultiBarsGlobalOptionsDefaults = {
 }
 local MultiBarsOptionsDefaults = {
 	adjustContainerOffset = true,
+	adjustGroupsForPetBar = false,
 	dropdownSound = true,
 	bars = {
 		MultiBarAspect = {
@@ -590,6 +591,10 @@ function MultiBars:LayoutBars()
 	local maxLevelBar = MainMenuBarMaxLevelBar:IsShown()
 	baserighty = baserighty + (maxLevelBar and 5 or 0)
 	
+	if MultiBarsOptions.adjustGroupsForPetBar then
+		baselefty = baselefty + 34
+	end
+	
 	if StanceBarFrame and StanceBarFrame:IsShown() then
 		leftAnchor = StanceBarFrame
 		baselefty = baselefty + 6
@@ -776,6 +781,7 @@ function MultiBars:OnFirstStart()
 			end
 		end
 		if playerClass == "HUNTER" then
+			MultiBarsOptions.adjustGroupsForPetBar = true
 			MultiBarsOptions.groups[1].alignment = "left"
 			MultiBarsOptions.groups[1].bars[1] = "MultiBarAspect"
 			MultiBarsOptions.groups[1].bars[2] = "MultiBarTrap"
@@ -799,6 +805,7 @@ function MultiBars:OnFirstStart()
 			MultiBarsOptions.groups[2].bars[2] = "MultiBarBuff"
 			MultiBarsOptions.groups[2].bars[3] = "MultiBarFood"
 		elseif playerClass == "WARLOCK" then
+			MultiBarsOptions.adjustGroupsForPetBar = true
 			MultiBarsOptions.groups[1].alignment = "left"
 			MultiBarsOptions.groups[1].bars[1] = "MultiBarCurse"
 			MultiBarsOptions.groups[1].bars[2] = "MultiBarDemon"

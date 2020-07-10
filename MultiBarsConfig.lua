@@ -228,6 +228,23 @@ local function MultiBarsConfig_CreateBaseOptions(MultiBars)
 		},
 	}
 	
+	local playerClass = UnitClassBase("player")
+	if playerClass == "HUNTER" or playerClass == "WARLOCK" then
+		options.args["adjustGroupsForPetBar"] = {
+			type = 'toggle',
+			order = 6,
+			name = "Left-aligned groups leave room for the pet action bar",
+			desc = "Positions left-aligned groups higher so that they don't cover up the pet action bar",
+			width = "full",
+			get = function(info) return MultiBarsOptions.adjustGroupsForPetBar end,
+			set = function(info, value)
+				MultiBarsOptions.adjustGroupsForPetBar = value
+				MultiBars:LayoutBars()
+				UIParent_ManageFramePositions()
+			end,
+		}
+	end
+	
 	return options
 end
 
