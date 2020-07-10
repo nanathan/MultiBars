@@ -289,7 +289,10 @@ MULTIBARS_CLASS_BARS = {
 		class = "DRUID",
 		hasAlternates = true,
 		spells = {
-			{ name = "Mark of the Wild", alternate = "Thorns" },
+			{ name = "Innervate" },
+			{ name = "Mark of the Wild", alternate = "Gift of the Wild" },
+			{ name = "Omen of Clarity" },
+			{ name = "Thorns" },
 		},
 	},
 	MultiBarFeedPet = {
