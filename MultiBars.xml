@@ -1,0 +1,26 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+	<Frame name="MultiBarsFrameTemplate" inherits="MultiBarsCoreBarTemplate" virtual="true">
+		<Scripts>
+			<OnLoad>
+				MultiBars_OnBarLoad(self)
+			</OnLoad>
+		</Scripts>
+	</Frame>
+	
+	<Frame name="MultiBarAspect" inherits="MultiBarsFrameTemplate"/>
+	<Frame name="MultiBarBlessing" inherits="MultiBarsFrameTemplate"/>
+	<Frame name="MultiBarBuff" inherits="MultiBarsFrameTemplate"/>
+	<Frame name="MultiBarConsumable" inherits="MultiBarsFrameTemplate"/>
+	<Frame name="MultiBarCurse" inherits="MultiBarsFrameTemplate"/>
+	<Frame name="MultiBarDemon" inherits="MultiBarsFrameTemplate"/>
+	<Frame name="MultiBarDruid" inherits="MultiBarsFrameTemplate"/>
+	<Frame name="MultiBarFeedPet" inherits="MultiBarsFrameTemplate"/>
+	<Frame name="MultiBarFood" inherits="MultiBarsFrameTemplate"/>
+	<Frame name="MultiBarHunterPet" inherits="MultiBarsFrameTemplate"/>
+	<Frame name="MultiBarMacro" inherits="MultiBarsFrameTemplate"/>
+	<Frame name="MultiBarPriest" inherits="MultiBarsFrameTemplate"/>
+	<Frame name="MultiBarProfession" inherits="MultiBarsFrameTemplate"/>
+	<Frame name="MultiBarSeal" inherits="MultiBarsFrameTemplate"/>
+	<Frame name="MultiBarTrap" inherits="MultiBarsFrameTemplate"/>
+</Ui>

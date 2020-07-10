@@ -1,0 +1,24 @@
+## Interface: 11305
+## Title: MultiBars
+## Author: nanathan
+## Version: v0.7.0-11305
+## Notes: A set of automatically updating action bars for your items, macros, and professions
+## OptionalDeps:
+## Dependencies:
+## SavedVariables: MultiBarsGlobalOptions
+## SavedVariablesPerCharacter: MultiBarsOptions
+
+embeds.xml
+
+localization\enUS.lua
+
+MultiBarsCore.lua
+MultiBarsCore.xml
+
+MultiBarsData.lua
+
+MultiBarsConfig.lua
+MultiBarsDropDown.lua
+
+MultiBars.lua
+MultiBars.xml

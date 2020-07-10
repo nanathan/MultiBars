@@ -1,0 +1,118 @@
+<Bindings>
+	<!-- User interface key bindings -->
+	<Binding name="MULTIBARASPECTBUTTON1" header="MULTIBARASPECT" category="ADDONS">
+		-- b1
+	</Binding>
+	<Binding name="MULTIBARASPECTBUTTON2" category="ADDONS">
+		-- b2
+	</Binding>
+	<Binding name="MULTIBARASPECTBUTTON3" category="ADDONS">
+		-- b3
+	</Binding>
+	<Binding name="MULTIBARASPECTBUTTON4" category="ADDONS">
+		-- b4
+	</Binding>
+	<Binding name="MULTIBARASPECTBUTTON5" category="ADDONS">
+		-- b5
+	</Binding>
+	<Binding name="MULTIBARASPECTBUTTON6" category="ADDONS">
+		-- b6
+	</Binding>
+	
+	<Binding name="MULTIBARCURSEBUTTON1" header="MULTIBARCURSE" category="ADDONS">
+		-- c1
+	</Binding>
+	<Binding name="MULTIBARCURSEBUTTON2" category="ADDONS">
+		-- c2
+	</Binding>
+	<Binding name="MULTIBARCURSEBUTTON3" category="ADDONS">
+		-- c3
+	</Binding>
+	<Binding name="MULTIBARCURSEBUTTON4" category="ADDONS">
+		-- c4
+	</Binding>
+	<Binding name="MULTIBARCURSEBUTTON5" category="ADDONS">
+		-- c5
+	</Binding>
+	<Binding name="MULTIBARCURSEBUTTON6" category="ADDONS">
+		-- c6
+	</Binding>
+	<Binding name="MULTIBARCURSEBUTTON7" category="ADDONS">
+		-- c7
+	</Binding>
+	<Binding name="MULTIBARCURSEBUTTON8" category="ADDONS">
+		-- c8
+	</Binding>
+	<Binding name="MULTIBARCURSEBUTTON9" category="ADDONS">
+		-- c9
+	</Binding>
+	
+	<Binding name="MULTIBARMACROBUTTON1" header="MULTIBARMACRO" category="ADDONS">
+		-- m1
+	</Binding>
+	<Binding name="MULTIBARMACROBUTTON2" category="ADDONS">
+		-- m2
+	</Binding>
+	<Binding name="MULTIBARMACROBUTTON3" category="ADDONS">
+		-- m3
+	</Binding>
+	<Binding name="MULTIBARMACROBUTTON4" category="ADDONS">
+		-- m4
+	</Binding>
+	<Binding name="MULTIBARMACROBUTTON5" category="ADDONS">
+		-- m5
+	</Binding>
+	<Binding name="MULTIBARMACROBUTTON6" category="ADDONS">
+		-- m6
+	</Binding>
+	<Binding name="MULTIBARMACROBUTTON7" category="ADDONS">
+		-- m7
+	</Binding>
+	<Binding name="MULTIBARMACROBUTTON8" category="ADDONS">
+		-- m8
+	</Binding>
+	<Binding name="MULTIBARMACROBUTTON9" category="ADDONS">
+		-- m9
+	</Binding>
+	<Binding name="MULTIBARMACROBUTTON10" category="ADDONS">
+		-- m10
+	</Binding>
+	<Binding name="MULTIBARMACROBUTTON11" category="ADDONS">
+		-- m11
+	</Binding>
+	<Binding name="MULTIBARMACROBUTTON12" category="ADDONS">
+		-- m12
+	</Binding>
+	
+	<Binding name="MULTIBARSEALBUTTON1" header="MULTIBARSEAL" category="ADDONS">
+		-- b1
+	</Binding>
+	<Binding name="MULTIBARSEALBUTTON2" category="ADDONS">
+		-- b2
+	</Binding>
+	<Binding name="MULTIBARSEALBUTTON3" category="ADDONS">
+		-- b3
+	</Binding>
+	<Binding name="MULTIBARSEALBUTTON4" category="ADDONS">
+		-- b4
+	</Binding>
+	<Binding name="MULTIBARSEALBUTTON5" category="ADDONS">
+		-- b5
+	</Binding>
+	<Binding name="MULTIBARSEALBUTTON6" category="ADDONS">
+		-- b6
+	</Binding>
+	
+	<Binding name="MULTIBARTRAPBUTTON1" header="MULTIBARTRAP" category="ADDONS">
+		-- b1
+	</Binding>
+	<Binding name="MULTIBARTRAPBUTTON2" category="ADDONS">
+		-- b2
+	</Binding>
+	<Binding name="MULTIBARTRAPBUTTON3" category="ADDONS">
+		-- b3
+	</Binding>
+	<Binding name="MULTIBARTRAPBUTTON4" category="ADDONS">
+		-- b4
+	</Binding>
+</Bindings>
