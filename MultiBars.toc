@@ -1,8 +1,8 @@
 ## Interface: 11305
 ## Title: MultiBars
 ## Author: nanathan
-## Version: v0.7.0-11305
-## Notes: A set of automatically updating action bars for your items, macros, and professions
+## Version: v0.7.1-11305
+## Notes: A set of automatically updating action bars for your items, professions, etc
 ## OptionalDeps:
 ## Dependencies:
 ## SavedVariables: MultiBarsGlobalOptions
