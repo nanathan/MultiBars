@@ -219,7 +219,7 @@ local function MultiBars_copyMissing(source, dest)
 			end
 			MultiBars_copyMissing(v, dest[k])
 		else
-			if not dest[k] then
+			if dest[k] == nil then
 				dest[k] = v
 			end
 		end
