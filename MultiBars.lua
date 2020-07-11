@@ -608,6 +608,8 @@ function MultiBars_LayoutBars()
 	MultiBars:LayoutBars()
 end
 
+-- Note: it's important not to call UIParent_ManageFramePositions from here, because
+-- we've hooked that function to invoke LayoutBars
 function MultiBars:LayoutBars()
 	if MULTIBARS_DEBUG_VERBOSE then
 		MultiBars:Print("MultiBars:LayoutBars()")
@@ -806,6 +808,24 @@ function MultiBars:UpdateBindings()
 	MultiBarsCore_Bar_UpdateBindings(MultiBarTrap)
 end
 
+local MultiBarsResetConfirmation = "MultiBarsResetConfirmation"
+StaticPopupDialogs[MultiBarsResetConfirmation] = {
+	text = "Are you sure you want to reset MultiBars settings?",
+	button1 = "Yes",
+	button2 = "No",
+	OnAccept = function()
+		MultiBars:ResetSettings()
+		UIParent_ManageFramePositions()
+	end,
+	timeout = 30,
+	whileDead = true,
+	hideOnEscape = true,
+}
+
+function MultiBars:ShowResetSettingsConfirmation()
+	StaticPopup_Show(MultiBarsResetConfirmation)
+end
+
 function MultiBars:ResetSettings()
 	wipe(MultiBarsOptions)
 	MultiBars_copyMissing(MultiBarsOptionsDefaults, MultiBarsOptions)
@@ -963,6 +983,9 @@ function MultiBars:OnChatCommand(input)
 			category = MultiBars.optionsPanels.blacklistOptionsPanel
 		elseif input == "macro" or input == "macros" then
 			category = MultiBars.optionsPanels.macroOptionsPanel
+		elseif input == "reset" then
+			MultiBars:ShowResetSettingsConfirmation()
+			return
 		end
 	end
 	

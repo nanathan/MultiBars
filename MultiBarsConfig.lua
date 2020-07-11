@@ -221,8 +221,7 @@ local function MultiBarsConfig_CreateBaseOptions(MultiBars)
 				order = 25,
 				name = "Reset Settings",
 				func = function(info)
-					MultiBars:ResetSettings()
-					UIParent_ManageFramePositions()
+					MultiBars:ShowResetSettingsConfirmation()
 				end,
 			}
 		},
