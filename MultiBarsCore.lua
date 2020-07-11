@@ -539,6 +539,17 @@ local function MultiBarsCore_GetCooldownString(startTime, duration)
 	return nil
 end
 
+local function MultiBarsCore_ShowItemLinkTooltip(itemLink, itemId)
+	GameTooltip:SetHyperlink(itemLink)
+	if itemId then
+		local cooldownString = MultiBarsCore_GetCooldownString(GetItemCooldown(itemId))
+		if cooldownString then
+			GameTooltip:AddLine("Cooldown Remaining: " .. cooldownString, 1, 1, 1)
+		end
+	end
+	GameTooltip:Show()
+end
+
 local function MultiBarsCore_ShowItemTooltip(itemId)
 	GameTooltip:SetItemByID(itemId)
 	local cooldownString = MultiBarsCore_GetCooldownString(GetItemCooldown(itemId))
@@ -562,10 +573,9 @@ local function MultiBarsCore_ShowActionTooltip(action, add)
 		local itemName, itemLink = GetMacroItem(action.slot)
 		if itemLink then
 			local itemId = GetItemInfoInstant(itemLink)
-			if itemId then
-				MultiBarsCore_ShowItemTooltip(itemId)
-				return
-			end
+			
+			MultiBarsCore_ShowItemLinkTooltip(itemLink, itemId)
+			return
 		end
 		
 		-- just show the name of the macro in the tooltip if there's no spell
