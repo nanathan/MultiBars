@@ -310,6 +310,34 @@ MULTIBARS_CLASS_BARS = {
 			{ name = "Tame Beast"},
 		},
 	},
+	MultiBarMageArmor = {
+		class = "MAGE",
+		spells = {
+			{ name = "Frost Armor", name2 = "Ice Armor" },
+			{ name = "Mage Armor" },
+		},
+	},
+	MultiBarMageBuff = {
+		class = "MAGE",
+		hasAlternates = true,
+		spells = {
+			{ name = "Amplify Magic" },
+			{ name = "Arcane Intellect", alternate = "Arcane Brilliance" },
+			{ name = "Dampen Magic" },
+		},
+	},
+	MultiBarMagePortal = {
+		class = "MAGE",
+		hasAlternates = true,
+		spells = {
+			{ name = "Teleport: Darnassus", alternate = "Portal: Darnassus" },
+			{ name = "Teleport: Ironforge", alternate = "Portal: Ironforge" },
+			{ name = "Teleport: Orgrimmar", alernate = "Portal:Orgrimmar" },
+			{ name = "Teleport: Stormwind", alternate = "Portal: Stormwind" },
+			{ name = "Teleport: Thunder Bluff", alternate = "Portal: Thunder Bluff" },
+			{ name = "Teleport: Undercity", alternate = "Portal: Undercity" },
+		},
+	},
 	MultiBarPriest = {
 		class = "PRIEST",
 		hasAlternates = true,

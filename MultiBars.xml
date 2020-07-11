@@ -19,6 +19,9 @@
 	<Frame name="MultiBarFood" inherits="MultiBarsFrameTemplate"/>
 	<Frame name="MultiBarHunterPet" inherits="MultiBarsFrameTemplate"/>
 	<Frame name="MultiBarMacro" inherits="MultiBarsFrameTemplate"/>
+	<Frame name="MultiBarMageArmor" inherits="MultiBarsFrameTemplate"/>
+	<Frame name="MultiBarMageBuff" inherits="MultiBarsFrameTemplate"/>
+	<Frame name="MultiBarMagePortal" inherits="MultiBarsFrameTemplate"/>
 	<Frame name="MultiBarPriest" inherits="MultiBarsFrameTemplate"/>
 	<Frame name="MultiBarProfession" inherits="MultiBarsFrameTemplate"/>
 	<Frame name="MultiBarSeal" inherits="MultiBarsFrameTemplate"/>

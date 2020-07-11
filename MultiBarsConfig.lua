@@ -527,6 +527,10 @@ local function MultiBarsConfig_CreateLayoutGroupOptions(MultiBars, options, n)
 		options.args[groupn].args.bars.values["MultiBarFeedPet"] = L.MultiBarFeedPet
 		options.args[groupn].args.bars.values["MultiBarHunterPet"] = L.MultiBarHunterPet
 		options.args[groupn].args.bars.values["MultiBarTrap"] = L.MultiBarTrap
+	elseif playerClass == "MAGE" then
+		options.args[groupn].args.bars.values["MultiBarMageArmor"] = L.MultiBarMageArmor
+		options.args[groupn].args.bars.values["MultiBarMageBuff"] = L.MultiBarMageBuff
+		options.args[groupn].args.bars.values["MultiBarMagePortal"] = L.MultiBarMagePortal
 	elseif playerClass == "PALADIN" then
 		options.args[groupn].args.bars.values["MultiBarBlessing"] = L.MultiBarBlessing
 		options.args[groupn].args.bars.values["MultiBarSeal"] = L.MultiBarSeal

@@ -97,6 +97,28 @@ local MultiBarsOptionsDefaults = {
 			maxButtons = 12,
 			reversed = false,
 		},
+		MultiBarMageArmor = {
+			color = { 2 / 3, 2 / 3, 0.7, 1 },
+			hidden = {},
+			maxButtons = 12,
+			reversed = false,
+		},
+		MultiBarMageBuff = {
+			color = { 2 / 3, 2 / 3, 0.7, 1 },
+			hidden = {},
+			maxButtons = 12,
+			reversed = false,
+			useAlternates = true,
+			useModSwitch = true,
+		},
+		MultiBarMagePortal = {
+			color = { 2 / 3, 2 / 3, 0.7, 1 },
+			hidden = {},
+			maxButtons = 12,
+			reversed = false,
+			useAlternates = true,
+			useModSwitch = true,
+		},
 		MultiBarPriest = {
 			color = { 2 / 3, 2 / 3, 0.7, 1 },
 			hidden = {},
@@ -296,7 +318,17 @@ local function MultiBars_AddClassSpellAction(self, actions, spellInfo, options, 
 	local action, altAction
 	local useAlt = options.useAlternates or options.useModSwitch
 	
-	if name then
+	-- Some spells have higher-level replacements with a different name...
+	if spellInfo.name2 then
+		local name2, _, icon2, _, _, _, spellId2 = GetSpellInfo(spellInfo.name2)
+		
+		if name2 then
+			local reagent2 = MultiBars_GetReagentName(spellId2)
+			action = {actionType = "spell", action = name2, spellId = spellId2, hideId = spellInfo.name, texture = icon2, itemName = reagent2}
+		end
+	end
+	
+	if name and not action then
 		local reagent = MultiBars_GetReagentName(spellId)
 		action = {actionType = "spell", action = name, spellId = spellId, hideId = spellInfo.name, texture = icon, itemName = reagent}
 	end
@@ -814,6 +846,16 @@ function MultiBars:OnFirstStart()
 			MultiBarsOptions.groups[2].bars[1] = "MultiBarConsumable"
 			MultiBarsOptions.groups[2].bars[2] = "MultiBarBuff"
 			MultiBarsOptions.groups[2].bars[3] = "MultiBarFood"
+		elseif playerClass == "MAGE" then
+			MultiBarsOptions.groups[1].alignment = "left"
+			MultiBarsOptions.groups[1].bars[1] = "MultiBarMageArmor"
+			MultiBarsOptions.groups[1].bars[2] = "MultiBarMageBuff"
+			MultiBarsOptions.groups[2].alignment = "right"
+			MultiBarsOptions.groups[2].bars[1] = "MultiBarConsumable"
+			MultiBarsOptions.groups[2].bars[2] = "MultiBarBuff"
+			MultiBarsOptions.groups[2].bars[3] = "MultiBarFood"
+			MultiBarsOptions.groups[4].alignment = "right"
+			MultiBarsOptions.groups[4].bars[1] = "MultiBarMagePortal"
 		elseif playerClass == "PALADIN" then
 			MultiBarsOptions.groups[1].alignment = "left"
 			MultiBarsOptions.groups[1].bars[1] = "MultiBarSeal"
