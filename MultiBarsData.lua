@@ -89,6 +89,25 @@ MULTIBARS_FOOD_ITEMS = {
 	[21537] = true, -- Festival Dumplings
 	[23161] = true, -- Freshly-Squeezed Lemonade
 	
+	[6291] = true, -- Raw Brilliant Smallfish
+	[6303] = true, -- Raw Slitherskin Mackerel
+	[6361] = true, -- Raw Rainbow Fin Albacore
+	[6289] = true, -- Raw Longjaw Mud Snapper
+	[6317] = true, -- Raw Loch Frenzy
+	[21071] = true, -- Raw Sagefish
+	[6308] = true, -- Raw Bristle Whisker Catfish
+	[8365] = true, -- Raw Mithril Head Trout
+	[6362] = true, -- Raw Rockscale Cod
+	[21153] = true, -- Raw Greater Sagefish
+	[13759] = true, -- Raw Nightfin Snapper
+	[4603] = true, -- Raw Spotted Yellowtail
+	[13756] = true, -- Raw Summer Bass
+	[13760] = true, -- Raw Sunscale Salmon
+	[13758] = true, -- Raw Redgill
+	[13754] = true, -- Raw Glossy Mightfish
+	[13889] = true, -- Raw Whitescale Salmon
+	[5959] = true, -- Raw Spinefin Halibut
+	
 	[17344] = true, -- Candy Cane
 	[19223] = true, -- Darkmoon Dog
 	[2070] = true, -- Darnassian Bleu
