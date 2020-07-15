@@ -292,6 +292,10 @@ function MultiBarsCore_Bar_OnUpdate(self)
 				
 				isUsable, notEnoughMana = IsUsableSpell(a.spellId)
 				
+				if (action.noPet and UnitExists("pet")) or (action.requiresPet and not UnitExists("pet")) then
+					isUsable = false
+				end
+				
 				-- Show yellow border highlight when:
 				-- the associated crafting window is open
 				-- the player currently has the buff

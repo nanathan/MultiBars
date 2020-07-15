@@ -324,13 +324,13 @@ local function MultiBars_AddClassSpellAction(self, actions, spellInfo, options, 
 		
 		if name2 then
 			local reagent2 = MultiBars_GetReagentName(spellId2)
-			action = {actionType = "spell", action = name2, spellId = spellId2, hideId = spellInfo.name, texture = icon2, itemName = reagent2}
+			action = {actionType = "spell", action = name2, spellId = spellId2, hideId = spellInfo.name, texture = icon2, itemName = reagent2, noPet = spellInfo.noPet, requiresPet = spellInfo.requiresPet}
 		end
 	end
 	
 	if name and not action then
 		local reagent = MultiBars_GetReagentName(spellId)
-		action = {actionType = "spell", action = name, spellId = spellId, hideId = spellInfo.name, texture = icon, itemName = reagent}
+		action = {actionType = "spell", action = name, spellId = spellId, hideId = spellInfo.name, texture = icon, itemName = reagent, noPet = spellInfo.noPet, requiresPet = spellInfo.requiresPet}
 	end
 	
 	if useAlt then
@@ -340,7 +340,7 @@ local function MultiBars_AddClassSpellAction(self, actions, spellInfo, options, 
 			
 			if altName then
 				local reagent = MultiBars_GetReagentName(altSpellId)
-				altAction = {actionType = "spell", action = altName, spellId = altSpellId, hideId = spellInfo.name, texture = altIcon, itemName = reagent}
+				altAction = {actionType = "spell", action = altName, spellId = altSpellId, hideId = spellInfo.name, texture = altIcon, itemName = reagent, noPet = spellInfo.noPet, requiresPet = spellInfo.requiresPet}
 			end
 		end
 	end
@@ -402,11 +402,12 @@ local function MultiBars_AddFeedPetItemAction(self, actions, addedItems, bag, ba
 		return
 	end
 	
+	local _, _, _, _, _, _, spellId = GetSpellInfo("Feed Pet")
 	local itemName, _, _, _, _, itemType, _, _, itemEquipLoc, itemIcon = GetItemInfo(itemid)
 	
 	addedItems[itemid] = true
 	
-	MultiBars_AddBarAction(self, actions, {actionType = "spell-item", action = "Feed Pet", item = itemid, itemName = itemName, petBuffId = 1539, texture = itemIcon})
+	MultiBars_AddBarAction(self, actions, {actionType = "spell-item", action = "Feed Pet", spellId = spellId, item = itemid, itemName = itemName, petBuffId = 1539, texture = itemIcon, requiresPet = true})
 end
 
 local function MultiBars_AddFoodItemAction(self, actions, addedItems, bag, bagSlot, buffFood, regularFood)
